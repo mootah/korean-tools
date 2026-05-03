@@ -12,11 +12,13 @@ echo "===== EXTRACT ====="
 uv run src/extract.py "$VIDEO_ID"
 
 echo "===== TRANSLATE ====="
-read -p "Any context? (Press [Enter] to continue)" context
+echo "Any context? (Press [Enter] to continue)"
+read context
 
 if [[ -n "$context" ]]; then
-    uv run src/translate.py "$VIDEO_ID" --context "$context"
+    uv run src/translate.py "data/_${VIDEO_ID}/_${VIDEO_ID}.tsv" --context "$context"
 else
-    uv run src/translate.py "$VIDEO_ID"
+    echo "translate without context"
+    uv run src/translate.py "data/_${VIDEO_ID}/_${VIDEO_ID}.tsv"
 fi
 
