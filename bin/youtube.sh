@@ -22,3 +22,5 @@ else
     uv run src/translate.py "data/_${VIDEO_ID}/_${VIDEO_ID}.tsv"
 fi
 
+echo "===== EXPORT ====="
+uv run src/export.py "$VIDEO_ID"

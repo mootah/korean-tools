@@ -12,9 +12,9 @@ def main(video_id, input_file, output_file):
     """
 
     if not input_file:
-        input_file = Path('data') / f"_{video_id}" / f"_{video_id}_translated.tsv"
+        input_file = Path('data') / f"_{video_id}" / f"_{video_id}.translated.tsv"
     if not output_file:
-        output_file = Path('data') / f"_{video_id}" / f"_{video_id}_anki.tsv"
+        output_file = Path('data') / f"_{video_id}" / f"_{video_id}.anki.tsv"
 
     input_path = Path(input_file)
     output_path = Path(output_file)
