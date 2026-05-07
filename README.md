@@ -3,7 +3,7 @@
 ## Usage
 
 > [!NOTE]
-> Dependencies: `uv`, `ffmpeg`, `yt-dlp`, `ollama` (with `translategemma:12b` model by default)
+> Dependencies: `uv`, `ffmpeg`, `ollama` (with `translategemma:12b` model by default)
 
 
 ### Download video, parse into sentences, extract segments, translate sentences
@@ -17,3 +17,4 @@
 ```zsh
 ./bin/install_media_into_anki.sh <video_id>
 ```
+

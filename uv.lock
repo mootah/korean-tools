@@ -522,9 +522,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "bs4" },
     { name = "faster-whisper" },
-    { name = "mecab-ko" },
     { name = "openai" },
-    { name = "openkorpos-dic" },
     { name = "rich" },
     { name = "rich-click" },
     { name = "webvtt-py" },
@@ -535,9 +533,7 @@ dependencies = [
 requires-dist = [
     { name = "bs4", specifier = ">=0.0.2" },
     { name = "faster-whisper", specifier = ">=1.2.1" },
-    { name = "mecab-ko", specifier = ">=1.0.2" },
     { name = "openai", specifier = ">=2.33.0" },
-    { name = "openkorpos-dic", specifier = ">=1.0.0" },
     { name = "rich", specifier = ">=15.0.0" },
     { name = "rich-click", specifier = ">=1.9.7" },
     { name = "webvtt-py", specifier = ">=0.5.1" },
@@ -564,29 +560,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec9
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8", size = 9979, upload-time = "2022-08-14T12:40:09.779Z" },
 ]
-
-[[package]]
-name = "mecab-ko"
-version = "1.0.2"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "mecab-ko-dic" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/45/bf/ac19d589a22f3c1372e22403b1e62c821f2c51cb95f4e8e298c73855a294/mecab_ko-1.0.2.tar.gz", hash = "sha256:a0c404e068e913f59aa4a6249e544d497a40ef3176a4aa5728a3f3859be4fce3", size = 75900, upload-time = "2025-09-23T22:49:27.693Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/94/e3/69a2b0a66f4f76521957fc617e5e13298b3bd2db065a6fbf92cafbc43808/mecab_ko-1.0.2-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:8c948db05c8c3037959ffc6ee2bd9a1e1c7bfefd6414806e9c8284f47eece3d7", size = 477018, upload-time = "2025-09-23T22:48:59.69Z" },
-    { url = "https://files.pythonhosted.org/packages/bc/6b/1c65964ee3b03a5182f755a690f8db72451b87c9baa46f3f56d5de5873f2/mecab_ko-1.0.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:07748db500eb223b0c3d10a2a3adddf2338350da1143781953f242babb3babbe", size = 440665, upload-time = "2025-09-23T22:49:01.434Z" },
-    { url = "https://files.pythonhosted.org/packages/13/9d/c3b59d2ea2dacec3a5b1a5f35f77487158166f141dec9b71e7340671c22c/mecab_ko-1.0.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8d4f4118b3c7cbe8d7aa33542723dcf3baeb3b3994946e63a12210615b7d1cc3", size = 437636, upload-time = "2025-09-23T22:49:03.165Z" },
-    { url = "https://files.pythonhosted.org/packages/52/3d/dfd58e811013308fbed3056812f7d09deebbfa2f1bec66d2d81f8f7b79b4/mecab_ko-1.0.2-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:f7f7ba73a8187f59d7269b04803280029f467a5c73286cc4b13dfd3c0c1f644a", size = 570365, upload-time = "2025-09-23T22:49:04.579Z" },
-    { url = "https://files.pythonhosted.org/packages/b7/bd/eac95fae003a4fe3f3f098d31ea1f6d031cb06e497a48424f5685addb3e7/mecab_ko-1.0.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:2c3a29796bd2246b226ba18afcc9fbd05095c003aa4a76d9425e468bc7848b51", size = 592842, upload-time = "2025-09-23T22:49:05.831Z" },
-    { url = "https://files.pythonhosted.org/packages/19/54/3a57b1645177cf3e41cf55bb974cd9a0c3a5749d677b48ed725c862847f0/mecab_ko-1.0.2-cp313-cp313-win_amd64.whl", hash = "sha256:3a50596101d1e52619e09f37cf4bff81452e218e89ce73fa89f65cea286b2a49", size = 501793, upload-time = "2025-09-23T22:49:07.147Z" },
-]
-
-[[package]]
-name = "mecab-ko-dic"
-version = "1.0.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/db/86/b88d823b0c912bb8e86584d697d51c866df567bd328f9196efab7835b8ab/mecab-ko-dic-1.0.0.tar.gz", hash = "sha256:3ba22858736e02e8a0e92f2a7f099528c733ae47701b29d12c75e982a85d1f11", size = 33150228, upload-time = "2021-02-19T20:41:22.16Z" }
 
 [[package]]
 name = "mutagen"
@@ -691,15 +664,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/f0/ee/d056c82f63c05f06baac0cffb4a90952d8274f90c49dfe244f20497b9bbd/openai-2.33.0.tar.gz", hash = "sha256:f850c435e2a4685bba3295bd54912dd26315d9c1b7733068186134d6e0599f9a", size = 693254, upload-time = "2026-04-28T14:04:42.428Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7d/32/37734d769bc8b42e4938785313cc05aade6cb0fa72479d3220a0d61a4e78/openai-2.33.0-py3-none-any.whl", hash = "sha256:03ac37d70e8c9e3a8124214e3afa785e2cbc12e627fbd98177a086ef2fd87ad5", size = 1162695, upload-time = "2026-04-28T14:04:40.482Z" },
-]
-
-[[package]]
-name = "openkorpos-dic"
-version = "1.0.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/76/a9/40dced5278e05620c66b69126b83096f05d25f55551009fdedc7f8417ec5/openkorpos-dic-1.0.0.tar.gz", hash = "sha256:8b0588b0a9a84c455bbaa7d358f98753152f96887fadfbb5e9b73665ab9563b5", size = 32708431, upload-time = "2022-08-31T02:05:17.992Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/71/16/a0eb7377114210f14bc8f6edd530ee987c9b4fa95abc3d195a4131f68b84/openkorpos_dic-1.0.0-py3-none-any.whl", hash = "sha256:131ec2a0dad9e65c1f964908868c75af6a5c94638bb7a518f1083a530d2ccd87", size = 32991272, upload-time = "2022-08-31T02:05:12.78Z" },
 ]
 
 [[package]]
