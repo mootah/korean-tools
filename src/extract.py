@@ -39,7 +39,7 @@ def process_segment(idx, start_ms, end_ms, mp4_file, output_dir):
         "-b:a", "48k",
         str(out_webm)
     ]
-    
+
     subprocess.run(cmd_image, check=True)
     subprocess.run(cmd_audio, check=True)
 
@@ -95,7 +95,7 @@ def main(video_id, mp4, tsv, out, workers):
                 executor.submit(process_segment, idx, start, end, mp4_file, output_dir)
             )
             
-        with click.progressbar(concurrent.futures.as_completed(futures), length=len(futures), label="Processing segments") as bar:
+        with click.progressbar(concurrent.futures.as_completed(futures), length=len(futures), label="Extracting") as bar:
             for future in bar:
                 try:
                     future.result()

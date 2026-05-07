@@ -1,6 +1,7 @@
 #!/bin/bash
 
 VIDEO_ID=$1
+CONTEXT=$2
 
 echo "===== DOWNLOAD ====="
 uv run src/download.py "$VIDEO_ID"
@@ -12,13 +13,12 @@ echo "===== EXTRACT ====="
 uv run src/extract.py "$VIDEO_ID"
 
 echo "===== TRANSLATE ====="
-echo "Any context? (Press [Enter] to continue)"
-read context
 
-if [[ -n "$context" ]]; then
-    uv run src/translate.py "data/_${VIDEO_ID}/_${VIDEO_ID}.tsv" --context "$context"
+if [[ -n "$CONTEXT" ]]; then
+    echo "Context: $CONTEXT"
+    uv run src/translate.py "data/_${VIDEO_ID}/_${VIDEO_ID}.tsv" --context "$CONTEXT"
 else
-    echo "translate without context"
+    echo "No context provided"
     uv run src/translate.py "data/_${VIDEO_ID}/_${VIDEO_ID}.tsv"
 fi
 

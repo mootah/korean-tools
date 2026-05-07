@@ -1,9 +1,8 @@
 import csv
 from pathlib import Path
-
+from rich.progress import track
 import rich_click as click
 from openai import OpenAI
-
 
 @click.command()
 @click.argument("input_file", type=click.Path(exists=True, path_type=Path))
@@ -22,6 +21,11 @@ def translate(input_file: Path, base_url: str, model: str, context: str):
     )
 
     output_file = input_file.parent / f"{input_file.stem}.translated.tsv"
+
+    total_lines = 0
+    with open(input_file, mode="r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        total_lines = sum(1 for _ in reader)
 
     with open(input_file, mode="r", encoding="utf-8") as infile:
         reader = csv.DictReader(infile, delimiter="\t")
@@ -45,11 +49,11 @@ def translate(input_file: Path, base_url: str, model: str, context: str):
 
         # Open output file in write mode and write line by line
         with open(output_file, mode="w", encoding="utf-8", newline="") as outfile:
-            writer = csv.DictWriter(outfile, fieldnames=output_fieldnames, delimiter="\t")
+            writer = csv.DictWriter(outfile, fieldnames=output_fieldnames, delimiter="\t", lineterminator="\n")
             writer.writeheader()
             outfile.flush()
 
-            for row in reader:
+            for row in track(reader, total=total_lines, description="Translate", transient=True):
                 original_text = row.get("sentence", "").strip()
                 
                 if not original_text:
@@ -85,9 +89,9 @@ def translate(input_file: Path, base_url: str, model: str, context: str):
                     translated_text = response.choices[0].message.content.strip()
                     row["sentence_ja"] = translated_text
                     
-                    click.echo(f"Original : {original_text}")
-                    click.echo(f"Translated: {translated_text}")
-                    click.echo("-" * 40)
+                    # click.echo(f"Original : {original_text}")
+                    # click.echo(f"Translated: {translated_text}")
+                    # click.echo("-" * 40)
                     
                 except Exception as e:
                     click.secho(f"Error during translation: {e}", fg="red")
